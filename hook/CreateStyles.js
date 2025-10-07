@@ -1,6 +1,9 @@
 import { StyleSheet } from "react-native";
+import { useTheme } from "..";
 
-export const createStyles = (theme = {}) => {
+export const createStyles = (customStyles) => {
+  const {theme} = useTheme()
+
   const t = {
     background: theme.background ?? "#ffffff",
     text: theme.text ?? "#212529",
@@ -232,5 +235,14 @@ export const createStyles = (theme = {}) => {
     
   };
 
-  return StyleSheet.create(base);
+    // Faz merge dos estilos base + estilos customizados do usuário
+  const mergedStyles = {
+    ...base,
+    ...(customStyles ? Object.entries(customStyles).reduce((acc, [key, style]) => {
+      acc[key] = { ...base[key], ...style };
+      return acc;
+    }, {}) : {}),
+  };
+
+  return StyleSheet.create(mergedStyles);
 };
