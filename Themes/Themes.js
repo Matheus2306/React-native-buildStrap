@@ -1,0 +1,28 @@
+export const DarkTheme = {
+  background: "#363333",
+  text: "#fff",
+  primary: "#bb86fc",
+  secondary: "#03dac6",
+  success: "#4caf50",
+  danger: "#cf6679",
+  warning: "#ff9800",
+  info: "#2196f3",
+  light: "#f5f5f5",
+  dark: "#212121",
+  white: "#ffffff",
+  muted: "#9e9e9e",
+};
+export const LightTheme = {
+  background: "#ffffff",
+  text: "#212529",
+  primary: "#007bff",
+  secondary: "#6c757d",
+  success: "#28a745",
+  danger: "#dc3545",
+  warning: "#ffc107",
+  info: "#17a2b8",
+  light: "#f8f9fa",
+  dark: "#343a40",
+  white: "#ffffff",
+  muted: "#6c757d",
+};
