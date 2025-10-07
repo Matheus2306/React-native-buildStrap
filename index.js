@@ -11,7 +11,7 @@ export const Buildstrap = ({ children, customTheme }) => {
   const theme = useMemo(() => {
     // Prioriza o tema customizado se ele for fornecido
     if (customTheme) return customTheme;
-    return isDark ? darkTheme : lightTheme;
+    return isDark ? DarkTheme : LightTheme;
   }, [isDark, customTheme]);
   return (
     <ThemeContext.Provider value={{ theme, isDark, toggleTheme }}>
