@@ -3,16 +3,20 @@ import { DarkTheme, LightTheme } from "./Themes/Themes";
 
 const ThemeContext = createContext();
 
-export const Buildstrap = ({ children, customTheme }) => {
+export const ThemeProvider = ({ children, customThemes }) => {
   const [isDark, setIsDark] = useState(false);
-
   const toggleTheme = () => setIsDark((prev) => !prev);
 
   const theme = useMemo(() => {
-    // Prioriza o tema customizado se ele for fornecido
-    if (customTheme) return customTheme;
-    return isDark ? DarkTheme : LightTheme;
-  }, [isDark, customTheme]);
+    if (customThemes) {
+      // Se o usuário passou temas customizados (ex: { light, dark })
+      if (isDark && customThemes.dark) return customThemes.dark;
+      if (!isDark && customThemes.light) return customThemes.light;
+    }
+
+    // fallback para os temas padrão
+    return isDark ? defaultDarkTheme : defaultLightTheme;
+  }, [isDark, customThemes]);
   return (
     <ThemeContext.Provider value={{ theme, isDark, toggleTheme }}>
       {children}
