@@ -5,20 +5,19 @@ export const createStyles = (customStyles) => {
   const {theme} = useTheme()
 
   const t = {
-    background: theme.background ?? "#ffffff",
-    text: theme.text ?? "#212529",
-    primary: theme.primary ?? "#007bff",
-    secondary: theme.secondary ?? "#6c757d",
-    success: theme.success ?? "#28a745",
-    danger: theme.danger ?? "#dc3545",
-    warning: theme.warning ?? "#ffc107",
-    info: theme.info ?? "#17a2b8",
-    light: theme.light ?? "#f8f9fa",
-    dark: theme.dark ?? "#343a40",
-    white: theme.white ?? "#ffffff",
-    muted: theme.muted ?? "#6c757d",
+    background: "#ffffff",
+    text: "#212529",
+    primary: "#007bff",
+    secondary: "#6c757d",
+    success:  "#28a745",
+    danger:  "#dc3545",
+    warning: "#ffc107",
+    info:  "#17a2b8",
+    light: "#f8f9fa",
+    dark:  "#343a40",
+    white:  "#ffffff",
+    muted:  "#6c757d",
     transparent: "transparent",
-    ...theme,
   };
 
   const base = {
@@ -231,6 +230,18 @@ export const createStyles = (customStyles) => {
       backgroundColor: theme.cardBackground,
       color: theme.cardText,
     },
+
+    // width / height
+    w100: { width: "100%" },
+    w75: { width: "75%" },
+    w50: { width: "50%" },
+    w25: { width: "25%" },
+    
+    h100: { height: "100%" },
+    h75: { height: "75%" },
+    h50: { height: "50%" },
+    h25: { height: "25%" },
+
    
     
   };
