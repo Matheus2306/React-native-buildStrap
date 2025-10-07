@@ -3,7 +3,7 @@ import { DarkTheme, LightTheme } from "./Themes/Themes";
 
 const ThemeContext = createContext();
 
-export const ThemeProvider = ({ children }) => {
+export const Buildstrap = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
   const toggleTheme = () => setIsDark((prev) => !prev);
 
