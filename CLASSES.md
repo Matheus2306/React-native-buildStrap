@@ -3,6 +3,7 @@
 Esta página lista todas as classes utilitárias disponíveis na biblioteca React Native BuildStrap, organizadas por categoria.
 
 ## Estrutura de Layout
+-`container`: Define um contêiner alinhado ao centro.
 
 ### Display
 - `dFlex`: Define o display como flex.

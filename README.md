@@ -141,3 +141,7 @@ Contribuições são bem-vindas! Para contribuir, siga estas etapas:
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+
+## Classes 
+
+Classes prontas: [Classes](./CLASSES.md)

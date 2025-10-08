@@ -56,6 +56,7 @@ export const createStyles = (customStyles) => {
     rounded2: { borderRadius: 8 },
     rounded3: { borderRadius: 10 },
     rounded4: { borderRadius: 15 },
+    roundedNone: { borderRadius: 0 },
 
     // text align
     textLeft: { textAlign: "left" },
@@ -93,10 +94,7 @@ export const createStyles = (customStyles) => {
     bgWhite: { backgroundColor: t.white },
     bgTransparent: { backgroundColor: t.transparent },
 
-    // border radius / shadow
-    rounded: { borderRadius: 4 },
-    roundedCircle: { borderRadius: 9999 },
-    roundedNone: { borderRadius: 0 },
+    // shadow
     shadow: {
       shadowColor: "#000",
       shadowOffset: { width: 0, height: 1 },
