@@ -240,8 +240,26 @@ export const createStyles = (customStyles) => {
     h50: { height: "50%" },
     h25: { height: "25%" },
 
-   
-    
+    //Carousel
+    itemContainer: {
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    image: {
+      width: "90%",
+      height: 200,
+      borderRadius: 10,
+    },
+    title: {
+      marginTop: 10,
+      fontWeight: "bold",
+      fontSize: 18,
+    },
+    description: {
+      fontSize: 14,
+      textAlign: "center",
+      color: "#888",
+    },
   };
 
     // Faz merge dos estilos base + estilos customizados do usuário
