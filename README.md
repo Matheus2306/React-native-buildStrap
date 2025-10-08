@@ -10,12 +10,6 @@ Para instalar a biblioteca, execute o seguinte comando:
 npm install react-native-buildstrap
 ```
 
-Ou, se estiver usando Yarn:
-
-```bash
-yarn add react-native-buildstrap
-```
-
 ## Configuração Inicial
 
 Envolva seu aplicativo com o componente `Buildstrap` para habilitar o suporte a temas. Você pode passar temas personalizados como propriedades.
