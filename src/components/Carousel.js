@@ -15,9 +15,10 @@ const { width } = Dimensions.get("window");
 
 export const Carousel = ({
   data = [],
-  autoPlay = true,
+  autoPlay,
   interval = 3000,
   showIndicators = true,
+  TextToggle
 }) => {
   const { theme } = useTheme();
   const styles = createStyles();
@@ -67,7 +68,7 @@ export const Carousel = ({
         <Text
           style={[
             styles.fs4,
-            styles.textMuted,
+            TextToggle ? styles.textToggle : styles.textMuted,
             styles.textCenter,
             styles.mt1,
             { maxWidth: "85%" },
