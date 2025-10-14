@@ -10,13 +10,12 @@ import {
 import { useTheme } from "react-native-buildstrap";
 import { createStyles } from "react-native-buildstrap/hook/CreateStyles";
 
-
 const { width } = Dimensions.get("window");
 
 export const Carousel = ({
   data = [],
   autoPlay,
-  interval = 3000,
+  interval,
   showIndicators = true,
   TextToggle
 }) => {
@@ -25,18 +24,23 @@ export const Carousel = ({
   const flatListRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // autoplay simples
-    useEffect(() => {
+  // calcula um delay válido; se interval não for número válido/positivo, usa 3000
+  const delay = (typeof interval === "number" && Number.isFinite(interval) && interval > 0) ? interval : 3000;
+
+  // autoplay estável (não recria o intervalo a cada incremento)
+  useEffect(() => {
     if (!autoPlay || data.length === 0) return;
 
     const timer = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % data.length;
-      flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-      setCurrentIndex(nextIndex);
-    }, interval);
+      setCurrentIndex((prev) => {
+        const nextIndex = (prev + 1) % data.length;
+        flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
+        return nextIndex;
+      });
+    }, delay);
 
     return () => clearInterval(timer);
-  }, [currentIndex, autoPlay, interval, data.length]);
+  }, [autoPlay, data.length, delay]);
 
   const renderItem = ({ item }) => (
     <View
