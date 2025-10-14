@@ -1,11 +1,18 @@
 {
   "name": "react-native-buildstrap",
-  "version": "1.3.",
+  "version": "1.4.9",
   "main": "index.js",
+  "react-native": "index.js",
+  "files": [
+    "index.js",
+    "hook",
+    "Themes",
+    "src"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Matheus Felipe Rodrigues",
   "license": "ISC",
-  "description": ""
+  "description": "Uma biblioteca para acelerar o desenvolvimento de apps React Native, oferecendo temas, hooks e componentes prontos para uso."
 }
