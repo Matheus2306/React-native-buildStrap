@@ -1,12 +1,18 @@
 import React from "react";
 import { ThemeContextProvider } from "./hook/ThemeProvider";
-import { MQTTProvider } from "./hook/MqttProvider";
+import { MqttProvider } from "./hook/MQTTContext";
 
+/**
+ * Buildstrap — Core Provider
+ * Integra tema e MQTT de forma opcional e inteligente.
+ */
 export const Buildstrap = ({ children, customThemes, mqttConfig }) => {
+  const hasMqtt = mqttConfig && typeof mqttConfig === "object";
+
   return (
     <ThemeContextProvider customThemes={customThemes}>
-      {mqttConfig ? (
-        <MQTTProvider mqttConfig={mqttConfig}>{children}</MQTTProvider>
+      {hasMqtt ? (
+        <MqttProvider mqttConfig={mqttConfig}>{children}</MqttProvider>
       ) : (
         children
       )}
@@ -18,3 +24,4 @@ export const Buildstrap = ({ children, customThemes, mqttConfig }) => {
 export { createStyles } from "./hook/CreateStyles";
 export { DarkTheme, LightTheme } from "./Themes/Themes";
 export { useTheme, ThemeContextProvider } from "./hook/ThemeProvider";
+export { useMqttContext } from "./hook/MQTTContext";
